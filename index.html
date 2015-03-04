@@ -1,0 +1,72 @@
+<html lang="en" ng-app="StarterApp">
+  <head>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.7.1/angular-material.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
+  </head>
+
+  <body layout="column">
+    
+
+    <md-toolbar layout="row">
+      <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
+        <span class="visually-hidden">Menu</span>
+      </button>
+
+      <h1>The Westin Harbour Castle, Toronto</h1>
+    </md-toolbar>
+
+	<div class="container">
+	    <div layout="row" flex>
+		   	
+			<md-card layout-margin flex="55">
+		      <img src="images/westinExterior.jpg" alt="Washed Out">
+		      <md-card-content>
+		        <h2>A Message From Tim Reardon, <span class="italic" style="font-style: italic; font-weight: 400; font-size: 16px; color: #hhh">General Manager</span></h2>
+
+		        <p>
+		          Thank you for visiting us. We hope you had a great experience. At Westin Harbour Castle, we are always looking for ways to improve our business and service, and cannot do so without your feedback! Please provide us your honest feedback and you'll automatically enter our $150 cash monthly draw. Winner will be announced on our Facebook fan page at the end of each month. Thanks for your time once again.
+		        </p>
+		      </md-card-content>
+		    </md-card>
+
+	       
+	        <div layout="column" flex="35" id="content">
+	            <md-content layout="column" flex class="md-padding"  layout-margin>
+	              
+	              <div flex flex-order="2" class="redBox">
+				    
+				  </div>
+				
+				  <div flex flex-order="1" class="greenBox">
+					   <div ng-app="bottomSheetDemo1">
+						 <div ng-controller="BottomSheetExample">
+						  <p style="padding-left: 20px;">
+						  </p>
+						  <div class="bottom-sheet-demo inset" layout="column" layout-sm="row" layout-align="center">
+						    <div style="width:50px;"></div>
+						    <md-button class="md-primary" ng-click="showGridBottomSheet($event)">
+						      Leave a review
+						    </md-button>
+						  </div>
+						  <br/>
+						  <b layout="row" layout-align="center center" layout-margin>
+						    {{alert}}
+						  </b>
+						</div>
+						</div>
+				  </div>
+	            </md-content>
+	        </div>
+	    </div>
+    </div>
+
+
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.7.1/angular-material.min.js"></script>
+    <script src="js/angular.js"></script>
+  </body>
+</html>
