@@ -19,7 +19,7 @@
 	    <div layout="row" flex>
 		   	
 			<md-card layout-margin flex="55">
-		      <img src="images/westinExterior.jpg" alt="Washed Out">
+		      <img src="images/westinExterior.jpg" alt="Westin Harbour Castle">
 		      <md-card-content>
 		        <h2>A Message From Tim Reardon, <span class="italic" style="font-style: italic; font-weight: 400; font-size: 16px; color: #hhh">General Manager</span></h2>
 
@@ -32,12 +32,10 @@
 	       
 	        <div layout="column" flex="35" id="content">
 	            <md-content layout="column" flex class="md-padding"  layout-margin>
-	              
-	              <div flex flex-order="2" class="redBox">
-				    
-				  </div>
-				
-				  <div flex flex-order="1" class="greenBox">
+
+	              <div flex flex-order="1" class="greenBox" ng-controller="AppCtrl">
+	              	<md-content>
+	              	<md-button class="md-raised">
 					   <div ng-app="bottomSheetDemo1">
 						 <div ng-controller="BottomSheetExample">
 						  <p style="padding-left: 20px;">
@@ -52,9 +50,34 @@
 						  <b layout="row" layout-align="center center" layout-margin>
 						    {{alert}}
 						  </b>
+						  <img class="thumbsUp" src="images/thumbsup.png" alt="thumbs up">
 						</div>
 						</div>
 				  </div>
+</md-button>
+	              <div flex flex-order="2" class="redBox">
+
+						<div ng-app="bottomSheetDemo2">
+						 <div ng-controller="BottomSheetExample2">
+						  <p style="padding-left: 20px;">
+						  </p>
+						  <div class="bottom-sheet-demo inset" layout="column" layout-sm="row" layout-align="center">
+						    <div style="width:50px;"></div>
+						    <md-button class="md-primary" ng-click="showGridBottomSheet($event)">
+						      Leave a review
+						    </md-button>
+						  </div>
+						  <br/>
+						  <b layout="row" layout-align="center center" layout-margin>
+						    {{alert}}
+						  </b>
+						  <img class="thumbsDown" src="images/thumbsdown.png" alt="thumbs up">
+						</div>
+						</div>
+				    
+				  </div>
+				
+				  
 	            </md-content>
 	        </div>
 	    </div>

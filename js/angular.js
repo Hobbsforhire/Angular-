@@ -1,4 +1,4 @@
-var app = angular.module('StarterApp', ['ngMaterial', 'bottomSheetDemo1']);
+var app = angular.module('StarterApp', ['ngMaterial', 'bottomSheetDemo1', 'bottomSheetDemo2']);
 
 app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
   $scope.toggleSidenav = function(menuId) {
@@ -10,6 +10,33 @@ app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
 
 angular.module('bottomSheetDemo1', ['ngMaterial'])
 .controller('BottomSheetExample', function($scope, $timeout, $mdBottomSheet){
+  $scope.alert = '';
+  var gridTemplate = '<md-bottom-sheet class="md-grid">\
+  <md-list>\
+    <md-item ng-repeat="item in items">\
+      <a class="md-grid-item-content" aria-label="{{item.name}}" ng-click="listItemClick($index)" ng-href="{{item.urlPath}}">\
+        <div class="md-icon-container">\
+          <md-inline-grid-icon icon="{{item.icon}}"></md-inline-grid-icon>\
+        </div>\
+        <p class="md-grid-text"> {{ item.name }} </p>\
+      </a>\
+    </md-item>\
+  </md-list>\
+</md-bottom-sheet>';
+  $scope.showGridBottomSheet = function($event) {
+    $scope.alert = '';  
+    $mdBottomSheet.show({
+      template: gridTemplate,
+      controller: 'GridBottomSheetCtrl',
+      targetEvent: $event
+    }).then(function(clickedItem) {
+      $scope.alert = clickedItem.name + ' selected!';
+    });
+  };
+})
+
+angular.module('bottomSheetDemo2', ['ngMaterial'])
+.controller('BottomSheetExample2', function($scope, $timeout, $mdBottomSheet){
   $scope.alert = '';
   var gridTemplate = '<md-bottom-sheet class="md-grid">\
   <md-list>\
@@ -48,4 +75,12 @@ angular.module('bottomSheetDemo1', ['ngMaterial'])
     var clickedItem = $scope.items[$index];
     $mdBottomSheet.hide(clickedItem);
   };
+});
+
+angular.module('buttonsDemo1', ['ngMaterial'])
+.controller('AppCtrl', function($scope) {
+  $scope.title1 = 'Button';
+  $scope.title4 = 'Warn';
+  $scope.isDisabled = true;
+  $scope.googleUrl = 'http://google.com';
 });

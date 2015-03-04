@@ -64,6 +64,18 @@ a, a:visited, a:hover, a:focus {
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
 }
 
+.thumbsUp {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumbsDown {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .redBox {
   background-color: #E74C3C; 
   height: 200px;"
@@ -99,3 +111,27 @@ https://github.com/google/material-design-icons
   box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.16); }
 .dialogdemoBasicUsage h2 .md-subheader-content {
   padding-left: 10px; }
+
+  .buttondemoBasicUsage {
+  /** From vulcanized demo **/ }
+  .buttondemoBasicUsage section {
+    background: #f7f7f7;
+    border-radius: 3px;
+    text-align: center;
+    margin: 1em;
+    position: relative !important;
+    padding-bottom: 10px; }
+  .buttondemoBasicUsage md-content {
+    margin-right: 7px; }
+  .buttondemoBasicUsage section .md-button:not(.md-fab) {
+    min-width: 10em; }
+  .buttondemoBasicUsage section .md-button {
+    display: block;
+    margin: 1em;
+    line-height: 25px; }
+  .buttondemoBasicUsage .label {
+    position: absolute;
+    bottom: 5px;
+    left: 7px;
+    color: #ccc;
+    font-size: 14px; }
